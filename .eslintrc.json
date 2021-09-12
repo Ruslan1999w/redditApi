@@ -1,0 +1,53 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb"
+  ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+  "rules": {
+    "jsx-a11y/media-has-caption": "off",
+    "react/no-array-index-key": "error",
+    "react/jsx-props-no-spreading": "off",
+    "react/destructuring-assignment": "off",
+    "jsx-a11y/control-has-associated-label": "warn",
+    "max-len": "warn",
+    "no-console": "warn",
+    "import/no-unresolved": "off",
+    "import/no-cycle": "off",
+    "react/prop-types" : 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "tsx"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "import/prefer-default-export": "off",
+    "prefer-const": "off",
+    "linebreak-style": 0,
+    "global-require": 0,
+    "no-unused-vars": "warn",
+    "eslint linebreak-style": [0, "error", "windows"],
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "ts": "never",
+        "tsx": "never",
+        "js": "never",
+        "jsx": "never"
+      }
+    ]
+  }
+}
