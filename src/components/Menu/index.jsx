@@ -6,8 +6,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import Badge from '@material-ui/core/Badge';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import ViewAgendaIcon from '@material-ui/icons/ViewAgenda';
 import ViewComfyIcon from '@material-ui/icons/ViewComfy';
 
@@ -88,11 +86,6 @@ export default function MenuBar({ changeView }) {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <FavoriteIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 4 new mails" color="inherit">
               <ViewAgendaIcon onClick={() => {
                 changeView('column');
               }}
@@ -107,11 +100,7 @@ export default function MenuBar({ changeView }) {
 
           </div>
           <div className={classes.sectionMobile}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <FavoriteIcon />
-              </Badge>
-            </IconButton>
+
             <IconButton aria-label="show 4 new mails" color="inherit">
               <ViewAgendaIcon onClick={() => {
                 changeView('column');

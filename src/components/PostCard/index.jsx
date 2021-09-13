@@ -1,9 +1,10 @@
 import React from 'react';
 import ArrowUpwardTwoToneIcon from '@material-ui/icons/ArrowUpwardTwoTone';
+import StarIcon from '@material-ui/icons/Star';
 import './index.scss';
 
 export default function PostCard({
-  author, description, media, ups, mediaType,
+  author, description, media, ups, mediaType, savePostToLocalStorage,
 }) {
   return (
     <div className="post-card-wrapper">
@@ -34,6 +35,14 @@ export default function PostCard({
               />
             )}
         </div>
+      </div>
+      <div className="post-card-add-to-favorite">
+        <StarIcon onClick={() => {
+          savePostToLocalStorage({
+            author, description, media, ups, mediaType,
+          });
+        }}
+        />
       </div>
     </div>
   );

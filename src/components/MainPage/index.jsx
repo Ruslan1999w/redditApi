@@ -26,13 +26,12 @@ const getQueryParams = (queryParams) => {
     }
     return query.join('&');
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error('QueryParamsError', err);
     return '';
   }
 };
 
-export default function MainPage({ view }) {
+export default function MainPage({ view, savePostToLocalStorage, getFavorites }) {
   const [posts, setPosts] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [postType, setPostType] = useState('top');
@@ -73,6 +72,7 @@ export default function MainPage({ view }) {
 
   useEffect(() => {
     fetchSubredditCatsList(1);
+    getFavorites();
   }, []);
 
   return (
@@ -95,8 +95,8 @@ export default function MainPage({ view }) {
               media={data?.media ? data.media?.reddit_video?.fallback_url : data.preview?.images[0].resolutions[1].url}
               ups={data?.ups}
               mediaType={data?.media ? 'video' : 'image'}
+              savePostToLocalStorage={savePostToLocalStorage}
             />
-
           ))
           }
           </div>
